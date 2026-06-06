@@ -1,0 +1,41 @@
+{
+  "name": "how-to-scrape-ethosia",
+  "version": "1.0.0",
+  "description": "Ethosia.co.il scraper and Israeli high-tech executive recruitment data extraction. Pull job listings, requirements, and direct ATS apply links via sitemap-driven Cheerio code. Free tier available.",
+  "main": "src/main.js",
+  "type": "module",
+  "scripts": {
+    "start": "node src/main.js"
+  },
+  "keywords": [
+    "ethosia",
+    "scraper",
+    "apify",
+    "apify-actor",
+    "israel",
+    "jobs",
+    "tech",
+    "executive",
+    "recruitment",
+    "data-extraction",
+    "sitemap",
+    "yoast",
+    "ats",
+    "static-html",
+    "cheerio"
+  ],
+  "author": "devansh-365",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/getascraper/how-to-scrape-ethosia"
+  },
+  "homepage": "https://apify.com/devanshlive/ethosia-scraper",
+  "bugs": {
+    "url": "https://github.com/getascraper/how-to-scrape-ethosia/issues"
+  },
+  "dependencies": {
+    "apify-client": "^2.9.0",
+    "dotenv": "^16.4.0"
+  }
+}

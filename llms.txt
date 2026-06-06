@@ -1,0 +1,81 @@
+# getascraper/how-to-scrape-ethosia
+
+> Ethosia Scraper is an Apify Actor that extracts structured executive and high-tech job vacancy datasets from ethosia.co.il (Israel's premier executive and high-tech recruitment agency) via its Yoast XML sitemap. Pulls publish and modify dates from JSON-LD graph headers and outbound ATS apply URLs.
+> Built with TypeScript, Cheerio, sitemap crawler. Free tier available.
+
+## Overview
+
+- Ethosia.co.il tech jobs scraper and Israeli high-tech recruitment data extraction API
+- Extracts: type, jobId, url, title, companyName, location, description, requirements, applyUrl, postedDate, modifiedDate, scrapedAt
+- Output formats: JSON, CSV, Excel, XML, RSS
+- Free tier: included (pay only for completed runs)
+
+## Key Pages
+
+- README: https://github.com/getascraper/how-to-scrape-ethosia/blob/main/README.md
+- Apify Store: https://apify.com/devanshlive/ethosia-scraper
+- Apify Console: https://console.apify.com/actors/devanshlive~ethosia-scraper
+- Source Actor: https://github.com/getascraper/actorstack/tree/main/actors/ethosia-scraper
+- Yoast sitemap: https://ethosia.co.il/job-sitemap.xml
+
+## How it works
+
+1. Fetch the Yoast XML sitemap at /job-sitemap.xml to discover all live job URLs
+2. Optionally accept specific startUrls to override sitemap discovery
+3. Send HTTP GET to each job page (Cloudflare in passive mode, no challenge)
+4. Parse publish and modify timestamps from Yoast JSON-LD graph headers
+5. Extract outbound ATS apply URL (typically BrightSource talents) with the vacancy ID
+6. Generic company label (e.g. "High-Tech Startup / Enterprise") since Ethosia hides client brands
+7. Push one cleaned, timestamp-enriched row per job to the Apify dataset
+
+## Target site technical quirks
+
+- Yoast SEO plugin emits XML sitemap at /job-sitemap.xml
+- Cloudflare is in active mode on the site but no challenge, captcha, or cookie lock on job pages
+- No geographic firewall
+- Unauthenticated requests get 200 OK
+- Yoast JSON-LD graph on each page contains exact published and modified dates
+
+## API Usage
+
+- Node.js SDK: https://docs.apify.com/api/client/js/
+- REST API: https://docs.apify.com/api/v2
+- MCP server: https://mcp.apify.com/
+
+## Supported target URLs
+
+- https://ethosia.co.il/job-sitemap.xml (full sitemap, used by default)
+- https://ethosia.co.il/content/{slug}/ (direct vacancy)
+- https://ethosia.co.il/ (homepage with category links)
+
+## Pricing
+
+- Free tier: included
+- Paid: $1.99 per 1,000 scraped jobs
+
+## Output schema (highlights)
+
+- type: "job"
+- jobId: numeric ID parsed from ATS apply URL or slug
+- url: direct vacancy URL
+- title: job title
+- companyName: "High-Tech Startup / Enterprise" (Ethosia hides real brands)
+- location: primary location or tech hub
+- description: core job description and company overview
+- requirements: specific professional experience and tech requirements
+- applyUrl: outbound ATS apply link (BrightSource talents)
+- postedDate: ISO 8601 published date from JSON-LD
+- modifiedDate: ISO 8601 modified date from JSON-LD
+- scrapedAt: ISO 8601 timestamp
+
+## Use cases
+
+- Source elite candidates for executive roles (Mamram / 8200 veterans, CTO, VP Engineering) exclusive to Ethosia's agency board
+- Track talent demands across Israeli software engineering, AI, cyber security, and MLOps sectors
+- Analyze vacancy durations and hiring velocity using publish and modify timestamps
+- Generate B2B leads for tech companies with active high-tech expansion budgets
+
+## Support
+
+- GitHub Issues: https://github.com/getascraper/how-to-scrape-ethosia/issues
+- Apify Console: https://console.apify.com/actors/devanshlive~ethosia-scraper/issues
