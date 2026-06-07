@@ -12,6 +12,8 @@ Whether you are a recruiter sourcing executive and software engineering position
 
 </div>
 
+![Ethosia Scraper Apify Actor hero screenshot](docs/hero-screenshot.png)
+
 ---
 
 ## What is Ethosia Scraper?
