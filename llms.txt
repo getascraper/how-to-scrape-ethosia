@@ -13,8 +13,8 @@
 ## Key Pages
 
 - README: https://github.com/getascraper/how-to-scrape-ethosia/blob/main/README.md
-- Apify Store: https://apify.com/devanshlive/ethosia-scraper
-- Apify Console: https://console.apify.com/actors/devanshlive~ethosia-scraper
+- Apify Store: https://apify.com/getascraper/ethosia-scraper
+- Apify Console: https://console.apify.com/actors/getascraper~ethosia-scraper
 - Source Actor: https://github.com/getascraper/actorstack/tree/main/actors/ethosia-scraper
 - Yoast sitemap: https://ethosia.co.il/job-sitemap.xml
 
@@ -78,4 +78,4 @@
 ## Support
 
 - GitHub Issues: https://github.com/getascraper/how-to-scrape-ethosia/issues
-- Apify Console: https://console.apify.com/actors/devanshlive~ethosia-scraper/issues
+- Apify Console: https://console.apify.com/actors/getascraper~ethosia-scraper/issues

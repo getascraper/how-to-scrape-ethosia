@@ -2,7 +2,7 @@
 
 # Ethosia Scraper | Israel Executive Tech Jobs | Apify Actor
 
-[![Apify Actor](https://img.shields.io/badge/Apify-Actor-ff6b35?style=for-the-badge&logo=apify&logoColor=white)](https://apify.com/devanshlive/ethosia-scraper) [![Node.js](https://img.shields.io/badge/Node.js-18%2B-339933?style=for-the-badge&logo=node.js&logoColor=white)](https://nodejs.org/) [![TypeScript](https://img.shields.io/badge/TypeScript-Strict-3178C6?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/) [![Free Tier](https://img.shields.io/badge/Free-Tier%20Included-blue?style=for-the-badge)](https://apify.com/devanshlive/ethosia-scraper) [![Sitemap](https://img.shields.io/badge/Yoast-XML%20Sitemap-ff6b35?style=for-the-badge)](https://ethosia.co.il/job-sitemap.xml)
+[![Apify Actor](https://img.shields.io/badge/Apify-Actor-ff6b35?style=for-the-badge&logo=apify&logoColor=white)](https://apify.com/getascraper/ethosia-scraper) [![Node.js](https://img.shields.io/badge/Node.js-18%2B-339933?style=for-the-badge&logo=node.js&logoColor=white)](https://nodejs.org/) [![TypeScript](https://img.shields.io/badge/TypeScript-Strict-3178C6?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/) [![Free Tier](https://img.shields.io/badge/Free-Tier%20Included-blue?style=for-the-badge)](https://apify.com/getascraper/ethosia-scraper) [![Sitemap](https://img.shields.io/badge/Yoast-XML%20Sitemap-ff6b35?style=for-the-badge)](https://ethosia.co.il/job-sitemap.xml)
 
 **Ethosia scraper and Israeli executive tech recruitment data extraction API.** Pull job titles, requirements, location hubs, publish and modify dates, and direct ATS apply links from ethosia.co.il with this Apify Actor. Sitemap-driven Cheerio code, no browser overhead. Free tier included.
 
@@ -42,7 +42,7 @@ import { ApifyClient } from 'apify-client';
 
 const client = new ApifyClient({ token: process.env.APIFY_TOKEN });
 
-const run = await client.actor('devanshlive/ethosia-scraper').call({
+const run = await client.actor('getascraper/ethosia-scraper').call({
   searchQuery: 'Developer',
   location: 'Tel Aviv',
   maxItems: 100,
@@ -54,7 +54,7 @@ console.log(items);
 
 ## How to use
 
-1. Open the Actor in [Apify Console](https://apify.com/devanshlive/ethosia-scraper)
+1. Open the Actor in [Apify Console](https://apify.com/getascraper/ethosia-scraper)
 2. Leave **Ethosia URLs** empty to crawl all active listings via the Yoast XML sitemap (default)
 3. Optionally set **Search Query** for a keyword like `Developer` or `VLSI`
 4. Optionally set **Location** to a city like `Tel Aviv` or `תל אביב`
@@ -154,4 +154,4 @@ The scraper accesses only the public, unauthenticated job listings of the Ethosi
 ## Support
 
 - GitHub Issues: https://github.com/getascraper/how-to-scrape-ethosia/issues
-- Apify Console: https://console.apify.com/actors/devanshlive~ethosia-scraper/issues
+- Apify Console: https://console.apify.com/actors/getascraper~ethosia-scraper/issues
